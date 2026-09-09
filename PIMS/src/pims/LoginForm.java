@@ -11,16 +11,15 @@ package pims;
 public class LoginForm extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(LoginForm.class.getName());
-    
- 
+
     /**
      * Creates new form LoginForm
      */
     public LoginForm() {
         setContentPane(new BackgroundPanel());
-         initComponents();
-         
-     }
+        initComponents();
+
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,18 +34,16 @@ public class LoginForm extends javax.swing.JFrame {
         jPasswordField1 = new javax.swing.JLabel();
         txtUsername = new pims.RoundedTextfield();
         btnLogin = new pims.RoundedButton("Login", new java.awt.Color(51, 102, 0), java.awt.Color.WHITE);
-        lblError = new javax.swing.JLabel();
         toggleBtn = new javax.swing.JButton();
         txtPassword = new pims.RoundedPassword();
-        jPanel1 = new javax.swing.JPanel();
         jPanel2 =    new pims.CardPanel(20);
+        lblError = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HealthFirst Pharmacy - Login");
         setBackground(new java.awt.Color(245, 249, 247));
         setFont(new java.awt.Font("Arial Black", 1, 10)); // NOI18N
         setForeground(java.awt.Color.white);
-        setPreferredSize(new java.awt.Dimension(400, 400));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         JUsername1.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
@@ -73,7 +70,6 @@ public class LoginForm extends javax.swing.JFrame {
         btnLogin.setText("Login");
         btnLogin.addActionListener(this::btnLoginActionPerformed);
         getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 110, 40));
-        getContentPane().add(lblError, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 258, 37, -1));
 
         toggleBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pims/images/eye_open.png"))); // NOI18N
         toggleBtn.setBorderPainted(false);
@@ -88,31 +84,79 @@ public class LoginForm extends javax.swing.JFrame {
         txtPassword.setForeground(new java.awt.Color(51, 51, 51));
         txtPassword.addActionListener(this::txtPasswordActionPerformed);
         getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 230, 30));
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 280, 220));
+
+        lblError.setForeground(new java.awt.Color(204, 0, 0));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(lblError, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(100, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(216, Short.MAX_VALUE)
+                .addComponent(lblError, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
+        );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 280, 250));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        //add authentication logic
+        String username = txtUsername.getText().trim();
+        String password = new String(txtPassword.getPassword());
+
+        if (username.isEmpty() || password.isEmpty()) {
+            lblError.setText("Please enter username and password");
+            return;
+        }
+
+        try {
+            pims.dao.UserDAO userDAO = new pims.dao.UserDAO();
+            pims.model.User user = userDAO.validateLogin(username, password);
+
+            if (user == null) {
+                lblError.setText("Invalid username or password");
+                return;
+            }
+
+            // Login successful — redirect based on role
+            this.dispose(); // close the login window
+
+            if (user.getRole().equals("Admin")) {
+                new pims.AdminDashboard().setVisible(true);
+            } else {
+                new pims.CashierDashboard().setVisible(true);
+            }
+
+        } catch (java.sql.SQLException e) {
+            lblError.setText("Database error - check connection");
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_btnLoginActionPerformed
-private boolean passwordVisible = false;
+    private boolean passwordVisible = false;
     private void toggleBtnActionPerformed1(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleBtnActionPerformed1
         passwordVisible = !passwordVisible;
 
-    String path = passwordVisible
-            ? "/pims/images/eye_closed.png"
-            : "/pims/images/eye_open.png";
+        String path = passwordVisible
+                ? "/pims/images/eye_closed.png"
+                : "/pims/images/eye_open.png";
 
-    java.net.URL url = getClass().getResource(path);
+        java.net.URL url = getClass().getResource(path);
 
-    if (url != null) {
-        toggleBtn.setIcon(new javax.swing.ImageIcon(url));
-    }
+        if (url != null) {
+            toggleBtn.setIcon(new javax.swing.ImageIcon(url));
+        }
 
-    txtPassword.setEchoChar(passwordVisible ? (char) 0 : '*');
-    
+        txtPassword.setEchoChar(passwordVisible ? (char) 0 : '*');
+
 
     }//GEN-LAST:event_toggleBtnActionPerformed1
 
@@ -152,7 +196,6 @@ private boolean passwordVisible = false;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JUsername1;
     private javax.swing.JButton btnLogin;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel jPasswordField1;
     private javax.swing.JLabel lblError;
