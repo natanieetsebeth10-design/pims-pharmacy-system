@@ -1,4 +1,4 @@
-package pims;
+package pims.gui;
 
 import pims.util.DBConnection;
 import java.sql.Connection;

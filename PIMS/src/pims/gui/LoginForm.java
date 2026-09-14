@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package pims;
+package pims.gui;
+
+import pims.BackgroundPanel;
 
 /**
  *
@@ -131,9 +133,9 @@ public class LoginForm extends javax.swing.JFrame {
             this.dispose(); // close the login window
 
             if (user.getRole().equals("Admin")) {
-                new pims.AdminDashboard().setVisible(true);
+                new pims.gui.AdminDashboard().setVisible(true);
             } else {
-                new pims.CashierDashboard().setVisible(true);
+                new pims.gui.CashierDashboard().setVisible(true);
             }
 
         } catch (java.sql.SQLException e) {
