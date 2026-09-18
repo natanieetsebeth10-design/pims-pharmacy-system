@@ -129,14 +129,14 @@ public class LoginForm extends javax.swing.JFrame {
                 return;
             }
 
-            // Login successful — redirect based on role
+            // Login successful - redirect based on role
             this.dispose(); // close the login window
 
             if (user.getRole().equals("Admin")) {
-                new pims.gui.AdminDashboard().setVisible(true);
-            } else {
-                new pims.gui.CashierDashboard().setVisible(true);
-            }
+    new pims.gui.AdminDashboard().setVisible(true);
+} else {
+    new pims.gui.CashierDashboard(user).setVisible(true);
+}
 
         } catch (java.sql.SQLException e) {
             lblError.setText("Database error - check connection");
