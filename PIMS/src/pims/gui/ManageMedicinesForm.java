@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package pims;
+package pims.gui;
 
+import pims.BackgroundPanel;
 import pims.dao.MedicineDAO;
 import pims.model.Medicine;
 
@@ -463,5 +464,5 @@ public class ManageMedicinesForm extends javax.swing.JFrame {
     private javax.swing.JTextField txtReorderLevel;
     private javax.swing.JTextField txtSupplierId;
     private javax.swing.JTextField txtType;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration                   
 }

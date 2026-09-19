@@ -29,27 +29,35 @@ public class AdminDashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         btnManageUsers = new javax.swing.JButton();
+        btnReports = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnManageUsers.setText("Manage Users");
         btnManageUsers.addActionListener(this::btnManageUsersActionPerformed);
 
+        btnReports.setText("Reports");
+        btnReports.addActionListener(this::btnReportsActionPerformed);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnManageUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(278, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(145, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnManageUsers, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                    .addComponent(btnReports, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(139, 139, 139))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(117, 117, 117)
                 .addComponent(btnManageUsers)
-                .addContainerGap(271, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(btnReports)
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         pack();
@@ -58,6 +66,10 @@ public class AdminDashboard extends javax.swing.JFrame {
     private void btnManageUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageUsersActionPerformed
         new pims.gui.ManageUsersForm().setVisible(true);
     }//GEN-LAST:event_btnManageUsersActionPerformed
+
+    private void btnReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportsActionPerformed
+        new pims.gui.ReportsForm().setVisible(true);
+    }//GEN-LAST:event_btnReportsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -86,5 +98,6 @@ public class AdminDashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnManageUsers;
+    private javax.swing.JButton btnReports;
     // End of variables declaration//GEN-END:variables
 }
