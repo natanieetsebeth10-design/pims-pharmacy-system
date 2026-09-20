@@ -15,7 +15,8 @@ public class CashierDashboard extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CashierDashboard.class.getName());
     private pims.model.User currentUser;
 
-    /**=
+    /**
+     * =
      * Creates new form CashierDashboard
      */
     public CashierDashboard(pims.model.User user) {
@@ -88,18 +89,19 @@ public class CashierDashboard extends javax.swing.JFrame {
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         int confirm = javax.swing.JOptionPane.showConfirmDialog(this,
-            "Are you sure you want to logout?", "Confirm Logout",
-            javax.swing.JOptionPane.YES_NO_OPTION);
-    if (confirm != javax.swing.JOptionPane.YES_OPTION) return;
+                "Are you sure you want to logout?", "Confirm Logout",
+                javax.swing.JOptionPane.YES_NO_OPTION);
+        if (confirm != javax.swing.JOptionPane.YES_OPTION) {
+            return;
+        }
 
-    this.dispose();
-    new pims.gui.LoginForm().setVisible(true);
+        this.dispose();
+        new pims.gui.LoginForm().setVisible(true);
     }//GEN-LAST:event_btnLogoutActionPerformed
 
     /**
      * @param args the command line arguments
      */
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogout;

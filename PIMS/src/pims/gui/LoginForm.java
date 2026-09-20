@@ -168,8 +168,8 @@ public class LoginForm extends javax.swing.JFrame {
         passwordVisible = !passwordVisible;
 
         String path = passwordVisible
-                ? "/pims/images/eye_closed.png"
-                : "/pims/images/eye_open.png";
+                ? "/pims/images/eye_open.png"
+                : "/pims/images/eye_closed.png";
 
         java.net.URL url = getClass().getResource(path);
 

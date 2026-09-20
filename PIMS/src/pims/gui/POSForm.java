@@ -69,7 +69,7 @@ public class POSForm extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblCart = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jButton1 = new pims.RoundedButton("<", new java.awt.Color(51, 102, 0), java.awt.Color.WHITE);
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
