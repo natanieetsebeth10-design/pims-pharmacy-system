@@ -79,14 +79,14 @@ public class AdminDashboard extends javax.swing.JFrame {
                             .addComponent(btnReports, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(139, 139, 139))))
+                            .addComponent(jButton2))
+                        .addGap(123, 123, 123))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addGap(40, 40, 40)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(btnManageUsers)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
@@ -96,7 +96,7 @@ public class AdminDashboard extends javax.swing.JFrame {
                 .addComponent(btnReports)
                 .addGap(18, 18, 18)
                 .addComponent(btnLogout)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addGap(35, 35, 35))
         );
 
         pack();

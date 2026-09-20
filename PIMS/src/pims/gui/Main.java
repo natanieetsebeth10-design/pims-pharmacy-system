@@ -13,6 +13,9 @@ public class Main {
             // Checks if the connection is active and valid
             if (conn != null && !conn.isClosed()) {
                 System.out.println("Connected to the database successfully!");
+                
+                // Launch the login window
+                java.awt.EventQueue.invokeLater(() -> new LoginForm().setVisible(true));
             }
         } catch (SQLException e) {
             // Prints an error message and the stack trace if the connection doesnt work

@@ -36,30 +36,35 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel5" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
                                   <Component id="txtEmail" alignment="0" min="-2" pref="172" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="btnAdd" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Component id="btnUpdate" min="-2" max="-2" attributes="0"/>
-                                  </Group>
                                   <Component id="jLabel1" min="-2" pref="111" max="-2" attributes="0"/>
                                   <Component id="txtSupplierId" min="-2" pref="172" max="-2" attributes="0"/>
                                   <Component id="jLabel3" min="-2" pref="111" max="-2" attributes="0"/>
                                   <Component id="txtContactPerson" alignment="0" min="-2" pref="172" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel2" min="-2" pref="97" max="-2" attributes="0"/>
-                                      <Component id="txtName" min="-2" pref="172" max="-2" attributes="0"/>
-                                      <Component id="txtPhone" alignment="0" min="-2" pref="172" max="-2" attributes="0"/>
-                                      <Component id="jLabel4" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jLabel6" min="-2" pref="66" max="-2" attributes="0"/>
-                                  <Component id="txtAddress" min="-2" pref="172" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Component id="btnClear" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnAdd" min="-2" pref="88" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                      <Component id="btnUpdate" min="-2" pref="88" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel2" min="-2" pref="97" max="-2" attributes="0"/>
+                                              <Component id="txtName" min="-2" pref="172" max="-2" attributes="0"/>
+                                              <Component id="txtPhone" alignment="0" min="-2" pref="172" max="-2" attributes="0"/>
+                                              <Component id="jLabel4" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="jLabel6" min="-2" pref="66" max="-2" attributes="0"/>
+                                          <Component id="txtAddress" min="-2" pref="172" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                                      <Component id="btnDelete" min="-2" pref="87" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="btnClear" min="-2" pref="88" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -189,6 +194,9 @@
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="12" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Supplier ID"/>
       </Properties>
     </Component>
@@ -199,6 +207,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="12" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Name"/>
       </Properties>
     </Component>
@@ -206,6 +217,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="12" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Contact Person"/>
       </Properties>
     </Component>
@@ -213,6 +227,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="12" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Phone"/>
       </Properties>
     </Component>
@@ -220,6 +237,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="12" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Email"/>
       </Properties>
     </Component>
@@ -227,6 +247,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="12" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Address"/>
       </Properties>
     </Component>
@@ -239,6 +262,9 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new pims.RoundedButton(&quot;Add&quot;, new java.awt.Color(51, 102, 0), java.awt.Color.WHITE)"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="btnUpdate">
       <Properties>
@@ -247,6 +273,9 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new pims.RoundedButton(&quot;Update&quot;, new java.awt.Color(51, 102, 0), java.awt.Color.WHITE)"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="btnDelete">
       <Properties>
@@ -255,6 +284,9 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new pims.RoundedButton(&quot;Delete&quot;, new java.awt.Color(51, 102, 0), java.awt.Color.WHITE)"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="btnClear">
       <Properties>
@@ -263,6 +295,9 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new pims.RoundedButton(&quot;Clear&quot;, new java.awt.Color(51, 102, 0), java.awt.Color.WHITE)"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
