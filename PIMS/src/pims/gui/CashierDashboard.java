@@ -4,6 +4,8 @@
  */
 package pims.gui;
 
+import pims.BackgroundPanel;
+
 /**
  *
  * @author natan
@@ -17,8 +19,10 @@ public class CashierDashboard extends javax.swing.JFrame {
      * Creates new form CashierDashboard
      */
     public CashierDashboard(pims.model.User user) {
+        setContentPane(new BackgroundPanel());
         initComponents();
         this.currentUser = user;
+        jLabel1.setText("Welcome, " + user.getUsername());
     }
 
     /**
@@ -30,8 +34,8 @@ public class CashierDashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnPOS = new javax.swing.JButton();
-        btnLogout = new javax.swing.JButton();
+        btnPOS = new pims.RoundedButton("Point Of Sale", new java.awt.Color(51, 102, 0), java.awt.Color.WHITE);
+        btnLogout = new pims.RoundedButton("Logout", new java.awt.Color(51, 102, 0), java.awt.Color.WHITE);
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,23 +47,25 @@ public class CashierDashboard extends javax.swing.JFrame {
         btnLogout.addActionListener(this::btnLogoutActionPerformed);
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
-        jLabel1.setText("Cashier Dashboard");
+        jLabel1.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText(" ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(54, Short.MAX_VALUE)
+                .addContainerGap(29, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(47, 47, 47))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnPOS))
-                        .addGap(74, 74, 74))))
+                        .addGap(74, 74, 74))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -4,6 +4,8 @@
  */
 package pims.gui;
 
+import pims.BackgroundPanel;
+
 /**
  *
  * @author natan
@@ -16,6 +18,7 @@ public class ManageUsersForm extends javax.swing.JFrame {
      * Creates new form ManageUsersForm
      */
     public ManageUsersForm() {
+        setContentPane(new BackgroundPanel());
         initComponents();
         loadUsersToTable();
     }

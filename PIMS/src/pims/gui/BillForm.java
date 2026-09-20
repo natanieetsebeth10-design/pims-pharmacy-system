@@ -4,6 +4,8 @@
  */
 package pims.gui;
 
+import pims.BackgroundPanel;
+
 /**
  *
  * @author natan
@@ -20,6 +22,7 @@ public class BillForm extends javax.swing.JFrame {
      * Creates new form BillForm
      */
     public BillForm(int saleId, java.util.List<pims.model.CartItem> items, java.math.BigDecimal total, pims.model.User cashier) {
+        setContentPane(new BackgroundPanel());
         initComponents();
         this.saleId = saleId;
         this.items = items;
@@ -29,8 +32,8 @@ public class BillForm extends javax.swing.JFrame {
     }
 
     private void populateBill() {
-        lblSaleInfo.setText("Sale #" + saleId + " - " + new java.text.SimpleDateFormat("dd/MM/yyyy HH:mm").format(new java.util.Date())
-                + " - Cashier: " + cashier.getFullName());
+        lblSaleInfo.setText("Sale #" + saleId + "   Date: " + new java.text.SimpleDateFormat("dd/MM/yyyy HH:mm").format(new java.util.Date())
+                + "   Cashier: " + cashier.getFullName());
 
         javax.swing.table.DefaultTableModel model
                 = new javax.swing.table.DefaultTableModel(
@@ -68,16 +71,21 @@ public class BillForm extends javax.swing.JFrame {
         lblHeader = new javax.swing.JLabel();
         lblSaleInfo = new javax.swing.JLabel();
         lblGrandTotal = new javax.swing.JLabel();
-        btnClose = new javax.swing.JButton();
+        btnClose = new pims.RoundedButton("Close", new java.awt.Color(51, 102, 0), java.awt.Color.WHITE);
         jScrollPane2 = new javax.swing.JScrollPane();
         tblBillItems = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        lblHeader.setText("Health Pharmacy First");
+        lblHeader.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lblHeader.setForeground(new java.awt.Color(0, 102, 0));
+        lblHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHeader.setText("Reciept");
 
+        lblSaleInfo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         lblSaleInfo.setText("  ");
 
+        lblGrandTotal.setFont(new java.awt.Font("Arial Black", 1, 10)); // NOI18N
         lblGrandTotal.setText("Total: R ");
 
         btnClose.setText("Close");
@@ -101,38 +109,34 @@ public class BillForm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(53, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(lblGrandTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(340, 340, 340))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(lblHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(226, 226, 226))
-                            .addComponent(btnClose, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(53, 53, 53)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblSaleInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE))))
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblGrandTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(lblSaleInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(217, 217, 217)
+                        .addComponent(lblHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(lblHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
+                .addComponent(lblHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lblSaleInfo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(lblGrandTotal)
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
                 .addComponent(btnClose)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         pack();

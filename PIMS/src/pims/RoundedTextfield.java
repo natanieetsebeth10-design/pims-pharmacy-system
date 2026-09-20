@@ -8,7 +8,7 @@ import java.awt.geom.RoundRectangle2D;
 public class RoundedTextfield extends JTextField {
     public RoundedTextfield() {
         setOpaque(false);
-        setBorder(new EmptyBorder(6, 12, 6, 12));
+        setBorder(new EmptyBorder(6, 12, 6, 40));
         setFont(new Font("SansSerif", Font.PLAIN, 13));
     }
 

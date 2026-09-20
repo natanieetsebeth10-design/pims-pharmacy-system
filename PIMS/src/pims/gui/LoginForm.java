@@ -20,7 +20,6 @@ public class LoginForm extends javax.swing.JFrame {
     public LoginForm() {
         setContentPane(new BackgroundPanel());
         initComponents();
-
     }
 
     /**
@@ -32,46 +31,50 @@ public class LoginForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        JUsername1 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JLabel();
-        txtUsername = new pims.RoundedTextfield();
-        btnLogin = new pims.RoundedButton("Login", new java.awt.Color(51, 102, 0), java.awt.Color.WHITE);
-        toggleBtn = new javax.swing.JButton();
-        txtPassword = new pims.RoundedPassword();
         jPanel2 =    new pims.CardPanel(20);
         lblError = new javax.swing.JLabel();
+        btnLogin = new pims.RoundedButton("Login", new java.awt.Color(51, 102, 0), java.awt.Color.WHITE);
+        JUsername1 = new javax.swing.JLabel();
+        txtUsername = new pims.RoundedTextfield();
+        jPasswordField1 = new javax.swing.JLabel();
+        txtPassword = new pims.RoundedPassword();
+        toggleBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HealthFirst Pharmacy - Login");
         setBackground(new java.awt.Color(245, 249, 247));
         setFont(new java.awt.Font("Arial Black", 1, 10)); // NOI18N
         setForeground(java.awt.Color.white);
+        setPreferredSize(new java.awt.Dimension(400, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        JUsername1.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
-        JUsername1.setForeground(new java.awt.Color(51, 51, 51));
-        JUsername1.setText("Username");
-        getContentPane().add(JUsername1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 230, 20));
+        jPanel2.setPreferredSize(new java.awt.Dimension(290, 230));
 
-        jPasswordField1.setFont(new java.awt.Font("Arial Black", 1, 10)); // NOI18N
-        jPasswordField1.setForeground(new java.awt.Color(51, 51, 51));
-        jPasswordField1.setText("Password");
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 61, -1));
-
-        txtUsername.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
-        txtUsername.setText("");
-        txtUsername.setBorder(null);
-        txtUsername.setSelectionEnd(15);
-        txtUsername.setSelectionStart(15);
-        txtUsername.addActionListener(this::txtUsernameActionPerformed);
-        getContentPane().add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 230, 30));
+        lblError.setForeground(new java.awt.Color(204, 0, 0));
+        lblError.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         btnLogin.setBackground(new java.awt.Color(51, 102, 0));
         btnLogin.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Login");
         btnLogin.addActionListener(this::btnLoginActionPerformed);
-        getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 110, 40));
+
+        JUsername1.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
+        JUsername1.setForeground(new java.awt.Color(51, 51, 51));
+        JUsername1.setText("Username");
+
+        txtUsername.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        txtUsername.setText("");
+        txtUsername.setSelectionEnd(0);
+        txtUsername.addActionListener(this::txtUsernameActionPerformed);
+
+        jPasswordField1.setFont(new java.awt.Font("Arial Black", 1, 10)); // NOI18N
+        jPasswordField1.setForeground(new java.awt.Color(51, 51, 51));
+        jPasswordField1.setText("Password");
+
+        txtPassword.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        txtPassword.setForeground(new java.awt.Color(51, 51, 51));
+        txtPassword.addActionListener(this::txtPasswordActionPerformed);
 
         toggleBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pims/images/eye_open.png"))); // NOI18N
         toggleBtn.setBorderPainted(false);
@@ -80,33 +83,50 @@ public class LoginForm extends javax.swing.JFrame {
         toggleBtn.setPreferredSize(new java.awt.Dimension(523, 22));
         toggleBtn.setSelected(true);
         toggleBtn.addActionListener(this::toggleBtnActionPerformed1);
-        getContentPane().add(toggleBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 20, 30));
-
-        txtPassword.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
-        txtPassword.setForeground(new java.awt.Color(51, 51, 51));
-        txtPassword.addActionListener(this::txtPasswordActionPerformed);
-        getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 230, 30));
-
-        lblError.setForeground(new java.awt.Color(204, 0, 0));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(lblError, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(JUsername1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(38, 38, 38)
+                            .addComponent(lblError, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGap(86, 86, 86)
+                            .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(toggleBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(216, Short.MAX_VALUE)
+                .addGap(36, 36, 36)
+                .addComponent(JUsername1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPasswordField1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(toggleBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblError, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
+                .addGap(8, 8, 8))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 280, 250));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 290, 250));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -133,10 +153,10 @@ public class LoginForm extends javax.swing.JFrame {
             this.dispose(); // close the login window
 
             if (user.getRole().equals("Admin")) {
-    new pims.gui.AdminDashboard().setVisible(true);
-} else {
-    new pims.gui.CashierDashboard(user).setVisible(true);
-}
+                new pims.gui.AdminDashboard(user).setVisible(true);
+            } else {
+                new pims.gui.CashierDashboard(user).setVisible(true);
+            }
 
         } catch (java.sql.SQLException e) {
             lblError.setText("Database error - check connection");

@@ -4,6 +4,8 @@
  */
 package pims.gui;
 
+import pims.BackgroundPanel;
+
 /**
  *
  * @author natan
@@ -18,6 +20,7 @@ public class POSForm extends javax.swing.JFrame {
      * Creates new form POSForm
      */
     public POSForm(pims.model.User user) {
+        setContentPane(new BackgroundPanel());
         initComponents();
         this.currentUser = user;
          btnSearchActionPerformed(null);
@@ -53,16 +56,16 @@ public class POSForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtSearch = new javax.swing.JTextField();
+        txtSearch = new pims.RoundedTextfield();
         btnSearch = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblSearchResults = new javax.swing.JTable();
         txtQuantity = new javax.swing.JTextField();
-        btnAddToCart = new javax.swing.JButton();
-        btnRemoveFromCart = new javax.swing.JButton();
-        btnClearCart = new javax.swing.JButton();
+        btnAddToCart = new pims.RoundedButton("Add To Cart", new java.awt.Color(51, 102, 0), java.awt.Color.WHITE);
+        btnRemoveFromCart = new pims.RoundedButton("Remove", new java.awt.Color(51, 102, 0), java.awt.Color.WHITE);
+        btnClearCart = new pims.RoundedButton("Clear", new java.awt.Color(51, 102, 0), java.awt.Color.WHITE);
         lblTotal = new javax.swing.JLabel();
-        btnCheckout = new javax.swing.JButton();
+        btnCheckout = new pims.RoundedButton("Checkout", new java.awt.Color(51, 102, 0), java.awt.Color.WHITE);
         jScrollPane2 = new javax.swing.JScrollPane();
         tblCart = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -90,6 +93,7 @@ public class POSForm extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblSearchResults);
 
+        txtQuantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtQuantity.setText("1");
 
         btnAddToCart.setText("Add To Cart");
@@ -101,6 +105,7 @@ public class POSForm extends javax.swing.JFrame {
         btnClearCart.setText("Clear");
         btnClearCart.addActionListener(this::btnClearCartActionPerformed);
 
+        lblTotal.setFont(new java.awt.Font("Arial Black", 1, 10)); // NOI18N
         lblTotal.setText("Total: R0.00");
 
         btnCheckout.setText("Checkout");
@@ -119,10 +124,12 @@ public class POSForm extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tblCart);
 
+        jLabel1.setFont(new java.awt.Font("Arial Black", 1, 10)); // NOI18N
         jLabel1.setText("Quantity");
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButton1.setText("<");
+        jButton1.setToolTipText("");
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -139,8 +146,8 @@ public class POSForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(137, 137, 137)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(116, 116, 116)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(72, 72, 72)
@@ -157,8 +164,8 @@ public class POSForm extends javax.swing.JFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnAddToCart, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(btnCheckout, javax.swing.GroupLayout.DEFAULT_SIZE, 357, Short.MAX_VALUE)
@@ -173,9 +180,9 @@ public class POSForm extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 25, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -183,7 +190,7 @@ public class POSForm extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAddToCart)
                     .addComponent(jLabel1))
                 .addGap(20, 20, 20)
