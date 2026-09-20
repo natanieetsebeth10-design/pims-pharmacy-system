@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `pims_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `pims_db`;
 -- MySQL dump 10.13  Distrib 8.0.42, for Win64 (x86_64)
 --
 -- Host: localhost    Database: pims_db
@@ -37,7 +35,7 @@ CREATE TABLE `medicines` (
   PRIMARY KEY (`medicine_id`),
   KEY `supplier_id` (`supplier_id`),
   CONSTRAINT `medicines_ibfk_1` FOREIGN KEY (`supplier_id`) REFERENCES `suppliers` (`supplier_id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +44,7 @@ CREATE TABLE `medicines` (
 
 LOCK TABLES `medicines` WRITE;
 /*!40000 ALTER TABLE `medicines` DISABLE KEYS */;
-INSERT INTO `medicines` VALUES (1,'Paracetamol 500mg','PharmaCorp','Tablet',25.50,200,30,'2027-06-30',1),(2,'Amoxicillin 250mg','MediSupply','Capsule',45.00,120,20,'2026-11-15',1),(3,'Cough Syrup Honey Lemon','HealWell','Syrup',58.90,60,15,'2026-09-25',3),(4,'Insulin Injection','MediSupply','Injection',210.00,40,10,'2026-10-05',2),(5,'Hydrocortisone Cream','HealWell','Cream',33.75,75,15,'2027-02-18',3),(6,'Ibuprofen 200mg','PharmaCorp','Tablet',28.00,150,25,'2026-09-30',2);
+INSERT INTO `medicines` VALUES (2,'Serdepressan','MediSupply','Capsule',45.00,116,20,'2026-11-15',1),(3,'Cough Syrup Honey Lemon','HealWell','Syrup',58.90,56,15,'2026-09-25',3),(4,'Ozempic','MediSupply','Injection',210.00,39,10,'2026-10-05',2),(5,'Hydrocortisone Cream','HealWell','Cream',33.75,75,15,'2027-02-18',3),(6,'Ibuprofen 200mg','PharmaCorp','Tablet',28.00,150,25,'2026-09-30',2),(8,'Paracetamol 500mg','PharmaCorp','Tablet',25.50,200,30,'2027-06-30',1);
 /*!40000 ALTER TABLE `medicines` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -131,7 +129,7 @@ CREATE TABLE `suppliers` (
 
 LOCK TABLES `suppliers` WRITE;
 /*!40000 ALTER TABLE `suppliers` DISABLE KEYS */;
-INSERT INTO `suppliers` VALUES (1,'MediSupply SA','Natanie Etsebeth','012-555-0101','[email protected]','45 Church Street, Pretoria Central'),(2,'PharmaCorp Distributors','Morne de Jager','012-555-0202','[email protected]','112 Lynnwood Road, Menlo Park, Pretoria'),(3,'HealWell Wholesalers','Sean Pretorius','012-555-0303','[email protected]','78 Stanza Bopape Street, Sunnyside, Pretoria');
+INSERT INTO `suppliers` VALUES (1,'MediSupply SA','Natanie Etsebeth','012-555-0101','info@medisupply.co.za','45 Church Street, Pretoria Central'),(2,'PharmaCorp Distributors','Morne de Jager','012-555-0202','info@pharmacorp.co.za','112 Lynnwood Road, Menlo Park, Pretoria'),(3,'HealWell Wholesalers','Sean Pretorius','012-555-0303','info@healwell.co.za','78 Stanza Bopape Street, Sunnyside, Pretoria');
 /*!40000 ALTER TABLE `suppliers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -159,7 +157,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','admin123','Admin','System Administrator'),(2,'cashier','cash123','Cashier','Front Counter Cashier');
+INSERT INTO `users` VALUES (1,'Michael','admin1','Admin','Michael'),(2,'Natanie','cashier1','Cashier','Natanie');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -172,4 +170,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-09-07 13:03:13
+-- Dump completed on 2026-09-20 17:46:48
